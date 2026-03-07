@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="FlyID Support - Find answers to frequently asked questions about MRZ scanning, NFC reading, and managing your digital document wallet.">
+    <title>Support & FAQ | FlyID</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .support-content {
+            max-width: 800px;
+            margin: 120px auto 40px;
+            padding: 40px;
+            line-height: 1.8;
+        }
+
+        .support-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .support-header h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .support-header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .faq-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+        }
+
+        details {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+
+        details:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        summary {
+            padding: 24px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            list-style: none;
+            /* Hide default arrow */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+            /* Hide default arrow in WebKit */
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--accent-secondary);
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 10px;
+            padding-top: 20px;
+        }
+
+        /* Contact Section Styles */
+        .contact-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(109, 40, 217, 0.1), rgba(14, 165, 233, 0.1));
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blob-bg blob-1"></div>
+    <div class="blob-bg blob-2"></div>
+
+    <nav class="navbar">
+        <div class="logo">FlyID<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="./index.html#features">Features</a></li>
+            <li><a href="./index.html#pricing">Pricing</a></li>
+        </ul>
+        <a href="./index.html" class="btn-nav">Back to Home</a>
+    </nav>
+
+    <main class="support-content reveal">
+        <div class="support-header">
+            <h1>How can we help?</h1>
+            <p>Browse our frequently asked questions or get in touch with our support team.</p>
+        </div>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>Is my data safe if I lose my phone?</summary>
+                <div class="faq-answer">
+                    <p>Yes. FlyID stores your data entirely on your device using Apple's secure SwiftData framework,
+                        protected by iOS sandbox encryption. Furthermore, access to the app itself is strictly locked
+                        behind Face ID, Touch ID, or your device passcode. Without your biometrics or passcode, your
+                        data cannot be accessed by anyone who finds your phone.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Does FlyID scan my biometric photo?</summary>
+                <div class="faq-answer">
+                    <p>Yes! When you scan the securely encrypted NFC chip inside modern e-Passports, FlyID extracts the
+                        high-resolution facial image stored on the document's chip and saves it locally in your app
+                        vault. This data is never sent to our servers.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Why is the NFC scan failing on my passport?</summary>
+                <div class="faq-answer">
+                    <p>NFC reading can sometimes be sensitive to positioning. Try the following:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Remove any thick cases from your iPhone.</li>
+                        <li>Place the top edge of your iPhone near the bottom half of the passport's back cover, or open
+                            the passport to the data page and place your phone over it.</li>
+                        <li>Hold your phone completely still for a few seconds when the prompt appears.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I manage or cancel my FlyID Pro subscription?</summary>
+                <div class="faq-answer">
+                    <p>Because all billing is handled securely by Apple, you must manage your subscription through the
+                        App Store.</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Open the <strong>Settings</strong> app on your iPhone.</li>
+                        <li>Tap your name at the top.</li>
+                        <li>Tap <strong>Subscriptions</strong>.</li>
+                        <li>Select FlyID Pro and choose "Cancel Subscription".</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        <section class="contact-section">
+            <h2>Still need help?</h2>
+            <p>If you couldn't find the answer you're looking for, our support team is ready to assist you.</p>
+            <a href="mailto:support@flyid.app" class="btn btn-primary btn-large">Email Support</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo">FlyID<span>.</span></div>
+            <div style="display: flex; gap: 20px;">
+                <a href="./support.html" style="color: var(--text-secondary); text-decoration: none;">Support & FAQ</a>
+                <a href="./privacy.html" style="color: var(--text-secondary); text-decoration: none;">Privacy Policy</a>
+            </div>
+            <p>&copy; 2026 Roy Rhayem. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
