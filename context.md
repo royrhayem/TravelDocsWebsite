@@ -38,7 +38,7 @@ FlyID operates on a strictly enforced freemium model.
 - No Emergency Sharing or Verified Card functionalities.
 - Basic expiration notifications, but cannot customize the notification horizon timeframe.
 
-**FlyID Pro (Subscription: $2.99 Monthly / $19.99 Annual - Includes 1-Week Free Trial):**
+**FlyID Pro (Subscription: $0.99 Monthly / $7.99 Annual):**
 - **Unlimited** document scans and storage.
 - **Unlimited** traveler profiles (folders).
 - **NFC Persistence Enabled** (Save high-res biometric photos & NFC verification timestamps).
