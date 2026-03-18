@@ -7,6 +7,9 @@
     <meta name="description"
         content="FlyID Privacy Policy - Read about our commitment to your privacy. Your data never leaves your device unless you choose to share it.">
     <title>Privacy Policy | FlyID</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -98,9 +101,9 @@
         <h2>2. Data Collection and Storage (Offline-First)</h2>
         <p>FlyID is designed as an "offline-first" application.</p>
         <ul>
-            <li><strong>Local Storage Engine:</strong> All document data, including Machine Readable Zone (MRZ)
-                extractions and high-resolution biometric photos, are stored exclusively on your iPhone or iPad using
-                Apple's <strong>SwiftData</strong> framework.</li>
+            <li><strong>Local Storage:</strong> All document data, including scanned text
+                and high-resolution biometric photos, are stored exclusively on your iPhone or iPad using
+                Apple's built-in secure storage.</li>
             <li><strong>Device Encryption:</strong> The data stored by FlyID is protected by iOS's built-in sandbox
                 encryption and cannot be accessed by other apps. You can (and should) strictly lock access to the app
                 behind <strong>Face ID or Touch ID</strong>.</li>
@@ -111,14 +114,14 @@
         <h2>3. Camera and NFC Usage</h2>
         <p>FlyID uses specific hardware components solely for the purpose of helping you digitize your documents:</p>
         <ul>
-            <li><strong>Camera Access:</strong> The camera is used strictly for on-device optical character recognition
-                (OCR) to read the MRZ on your documents. The actual image frames are processed in real-time and
+            <li><strong>Camera Access:</strong> The camera is used strictly for on-device reading of
+                the printed code on your documents. The actual image frames are processed in real-time and
                 <strong>immediately discarded</strong> once the data is extracted.
             </li>
             <li><strong>NFC Reader Access:</strong> The NFC reader is used to securely communicate with the
                 cryptographic chip embedded in modern e-Passports and ID cards. The data read from the chip (such as
                 your biometric photo and verified demographic details) is transferred directly to the app's secure local
-                SwiftData vault.</li>
+                secure local storage.</li>
         </ul>
 
         <h2>4. Encrypted Sharing</h2>
