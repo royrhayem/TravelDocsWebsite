@@ -236,6 +236,7 @@ h3 {
 .hero-actions {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 /* Mockup Graphic */
@@ -255,44 +256,79 @@ h3 {
     }
 }
 
-.glass-mockup {
+/* iPhone Mockup */
+.iphone-mockup {
     width: 100%;
-    max-width: 500px;
+    max-width: 300px;
     margin: 0 auto;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
 }
 
-.mockup-header {
+.iphone-frame {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 44px;
+    padding: 12px;
+    border: 3px solid #2a2a2a;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.iphone-notch {
     display: flex;
-    gap: 8px;
-    margin-bottom: 20px;
+    justify-content: center;
+    padding: 8px 0 4px;
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+.iphone-dynamic-island {
+    width: 100px;
+    height: 28px;
+    background: #000;
+    border-radius: 20px;
 }
 
-.red {
-    background: #ff5f56;
+.iphone-screen {
+    background: #000;
+    border-radius: 32px;
+    overflow: hidden;
+    aspect-ratio: 9 / 16;
+    display: flex;
+    flex-direction: column;
 }
 
-.yellow {
-    background: #ffbd2e;
+.iphone-status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 24px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
 }
 
-.green {
-    background: #27c93f;
+.iphone-status-icons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #fff;
 }
 
 .mockup-body {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 12px;
-    padding: 30px;
+    padding: 30px 20px;
+    margin: auto 12px;
     position: relative;
     overflow: hidden;
+}
+
+.iphone-home-indicator {
+    width: 120px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    margin: 8px auto;
 }
 
 .scan-line {
@@ -329,8 +365,8 @@ h3 {
 .scan-data {
     font-family: monospace;
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
     margin-top: 20px;
     word-break: break-all;
 }
@@ -545,34 +581,14 @@ footer {
     color: var(--accent-secondary);
 }
 
-/* App Store Button */
-.btn-app-store {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: #000;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-decoration: none;
-    transition: transform 0.3s, background 0.3s;
+/* App Store Badge */
+.app-store-badge {
+    display: inline-block;
+    transition: transform 0.3s;
 }
 
-.btn-app-store:hover {
+.app-store-badge:hover {
     transform: translateY(-2px);
-    background: #111;
-}
-
-.btn-app-store span {
-    text-align: left;
-    font-size: 0.75rem;
-    line-height: 1.2;
-}
-
-.btn-app-store strong {
-    font-size: 1.1rem;
-    font-weight: 600;
 }
 
 /* Trust Strip */
