@@ -5,213 +5,326 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="FlyID Support - Find answers to frequently asked questions about document scanning, NFC reading, and managing your digital document wallet.">
-    <title>Support & FAQ | FlyID</title>
+        content="FlyID Support - Find answers to frequently asked questions about scanning, storing and managing your travel documents.">
+    <title>FAQ | FlyID</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        .support-content {
-            max-width: 800px;
-            margin: 120px auto 40px;
-            padding: 40px;
-            line-height: 1.8;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #111;
+            line-height: 1.6;
         }
 
-        .support-header {
+        /* ── Nav ── */
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 32px;
+            border-bottom: 1px solid rgba(0,0,0,0.07);
+        }
+
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            color: #111;
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover { color: #2e7cf6; }
+
+        .nav-back svg { flex-shrink: 0; }
+
+        /* ── Page header ── */
+        .page-header {
             text-align: center;
-            margin-bottom: 60px;
+            padding: 64px 24px 48px;
+            border-bottom: 1px solid rgba(0,0,0,0.07);
         }
 
-        .support-header h1 {
-            font-size: 3rem;
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+        }
+
+        .page-header p {
+            margin-top: 12px;
+            font-size: 1.05rem;
+            color: #666;
+        }
+
+        /* ── Content ── */
+        .content {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        /* ── Accordion ── */
+        .faq-group {
+            margin-bottom: 48px;
+        }
+
+        .faq-group-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
             margin-bottom: 16px;
-            letter-spacing: -1px;
-        }
-
-        .support-header p {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-        }
-
-        /* FAQ Accordion Styles */
-        .faq-section {
-            margin-bottom: 60px;
-        }
-
-        .faq-section h2 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: var(--text-primary);
         }
 
         details {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            margin-bottom: 16px;
-            overflow: hidden;
-            transition: background-color 0.3s;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
         }
 
-        details:hover {
-            background: rgba(255, 255, 255, 0.05);
+        details:first-of-type {
+            border-top: 1px solid rgba(0,0,0,0.08);
         }
 
         summary {
-            padding: 24px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            cursor: pointer;
-            list-style: none;
-            /* Hide default arrow */
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
+            padding: 20px 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #111;
+            cursor: pointer;
+            list-style: none;
             user-select: none;
         }
 
-        summary::-webkit-details-marker {
-            display: none;
-            /* Hide default arrow in WebKit */
-        }
+        summary::-webkit-details-marker { display: none; }
 
-        summary::after {
-            content: '+';
-            font-size: 1.5rem;
+        .summary-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
             font-weight: 400;
-            color: var(--accent-secondary);
-            transition: transform 0.3s ease;
+            color: #555;
+            transition: background 0.2s, transform 0.25s;
         }
 
-        details[open] summary::after {
+        details[open] .summary-icon {
+            background: #2e7cf6;
+            color: #fff;
             transform: rotate(45deg);
         }
 
         .faq-answer {
-            padding: 0 24px 24px;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 10px;
-            padding-top: 20px;
+            padding: 0 0 20px;
+            color: #555;
+            font-size: 0.975rem;
+            line-height: 1.75;
         }
 
-        /* Contact Section Styles */
-        .contact-section {
-            text-align: center;
-            padding: 40px;
-            background: linear-gradient(135deg, rgba(109, 40, 217, 0.1), rgba(14, 165, 233, 0.1));
+        .faq-answer ul {
+            margin: 12px 0 0 20px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 6px;
+        }
+
+        /* ── Contact card ── */
+        .contact-card {
+            margin-top: 16px;
+            padding: 40px 32px;
+            background: #f5f8ff;
             border-radius: 20px;
-            border: 1px solid var(--glass-border);
+            text-align: center;
         }
 
-        .contact-section h2 {
-            font-size: 2rem;
-            margin-bottom: 16px;
+        .contact-card h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
         }
 
-        .contact-section p {
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-            font-size: 1.1rem;
+        .contact-card p {
+            margin-top: 8px;
+            color: #666;
+            font-size: 0.975rem;
         }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 24px;
+            padding: 14px 28px;
+            background: #111;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 999px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .contact-btn:hover {
+            background: #2e7cf6;
+            transform: translateY(-1px);
+        }
+
+        /* ── Footer ── */
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px 24px 32px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            font-size: 0.875rem;
+            color: #888;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover { color: #2e7cf6; }
     </style>
 </head>
 
 <body>
-    <div class="blob-bg blob-1"></div>
-    <div class="blob-bg blob-2"></div>
 
-    <nav class="navbar">
-        <div class="logo">FlyID<span>.</span></div>
-        <ul class="nav-links">
-            <li><a href="./index.html#features">Features</a></li>
-            <li><a href="./index.html#pricing">Pricing</a></li>
-        </ul>
-        <a href="./index.html" class="btn-nav">Back to Home</a>
+    <nav class="nav">
+        <a href="./index.html" class="nav-logo">FlyID</a>
+        <a href="./index.html" class="nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Home
+        </a>
     </nav>
 
-    <main class="support-content reveal">
-        <div class="support-header">
-            <h1>How can we help?</h1>
-            <p>Browse our frequently asked questions or get in touch with our support team.</p>
+    <header class="page-header">
+        <h1>How can we help?</h1>
+        <p>Answers to the most common questions about FlyID.</p>
+    </header>
+
+    <main class="content">
+
+        <div class="faq-group">
+            <p class="faq-group-title">Privacy &amp; Security</p>
+
+            <details>
+                <summary>
+                    Is my data safe if I lose my phone?
+                    <span class="summary-icon">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>Yes. FlyID stores your data entirely on your device, protected by iOS encryption. Access to the app is locked behind Face ID, Touch ID, or your device passcode — without your biometrics or passcode, nobody can get in.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    Does FlyID upload anything to a server?
+                    <span class="summary-icon">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>No. FlyID is offline-first. Your documents, photos, and personal data never leave your device unless you explicitly use the Emergency Sharing feature — and even then the data is end-to-end encrypted and the link is time-limited.</p>
+                </div>
+            </details>
         </div>
 
-        <section class="faq-section">
-            <h2>Frequently Asked Questions</h2>
+        <div class="faq-group">
+            <p class="faq-group-title">Scanning</p>
 
             <details>
-                <summary>Is my data safe if I lose my phone?</summary>
+                <summary>
+                    Does FlyID scan my biometric photo?
+                    <span class="summary-icon">+</span>
+                </summary>
                 <div class="faq-answer">
-                    <p>Yes. FlyID stores your data entirely on your device,
-                        protected by iOS encryption. Furthermore, access to the app itself is strictly locked
-                        behind Face ID, Touch ID, or your device passcode. Without your biometrics or passcode, your
-                        data cannot be accessed by anyone who finds your phone.</p>
+                    <p>Yes. When you scan the chip inside a modern e-Passport, FlyID extracts the high-resolution facial image stored on it and saves it locally. This data is never sent to our servers.</p>
                 </div>
             </details>
 
             <details>
-                <summary>Does FlyID scan my biometric photo?</summary>
+                <summary>
+                    Why is the chip scan failing on my passport?
+                    <span class="summary-icon">+</span>
+                </summary>
                 <div class="faq-answer">
-                    <p>Yes! When you scan the securely encrypted NFC chip inside modern e-Passports, FlyID extracts the
-                        high-resolution facial image stored on the document's chip and saves it locally in your app
-                        vault. This data is never sent to our servers.</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>Why is the NFC scan failing on my passport?</summary>
-                <div class="faq-answer">
-                    <p>NFC reading can sometimes be sensitive to positioning. Try the following:</p>
-                    <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li>Remove any thick cases from your iPhone.</li>
-                        <li>Place the top edge of your iPhone near the bottom half of the passport's back cover, or open
-                            the passport to the data page and place your phone over it.</li>
+                    <p>Chip reading can be sensitive to positioning. A few things to try:</p>
+                    <ul>
+                        <li>Remove any thick case from your iPhone.</li>
+                        <li>Place the top edge of your iPhone near the bottom half of the passport's back cover, or open the passport to the data page and rest your phone on it.</li>
                         <li>Hold your phone completely still for a few seconds when the prompt appears.</li>
                     </ul>
                 </div>
             </details>
+        </div>
+
+        <div class="faq-group">
+            <p class="faq-group-title">Subscription</p>
 
             <details>
-                <summary>How do I manage or cancel my FlyID Pro subscription?</summary>
+                <summary>
+                    How do I manage or cancel FlyID Pro?
+                    <span class="summary-icon">+</span>
+                </summary>
                 <div class="faq-answer">
-                    <p>Because all billing is handled securely by Apple, you must manage your subscription through the
-                        App Store.</p>
-                    <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li>Open the <strong>Settings</strong> app on your iPhone.</li>
-                        <li>Tap your name at the top.</li>
-                        <li>Tap <strong>Subscriptions</strong>.</li>
+                    <p>All billing is handled by Apple. To manage your subscription:</p>
+                    <ul>
+                        <li>Open <strong>Settings</strong> on your iPhone.</li>
+                        <li>Tap your name at the top, then tap <strong>Subscriptions</strong>.</li>
                         <li>Select FlyID Pro and choose "Cancel Subscription".</li>
                     </ul>
                 </div>
             </details>
-        </section>
+        </div>
 
-        <section class="contact-section">
+        <div class="contact-card">
             <h2>Still need help?</h2>
-            <p>If you couldn't find the answer you're looking for, our support team is ready to assist you.</p>
-            <a href="mailto:support@flyid.app" class="btn btn-primary btn-large">Email Support</a>
-        </section>
+            <p>Our support team usually replies within one business day.</p>
+            <a href="mailto:support@flyid.app" class="contact-btn">Email Support</a>
+        </div>
+
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="logo">FlyID<span>.</span></div>
-            <div style="display: flex; gap: 20px;">
-                <a href="./support.html" style="color: var(--text-secondary); text-decoration: none;">Support & FAQ</a>
-                <a href="./privacy.html" style="color: var(--text-secondary); text-decoration: none;">Privacy Policy</a>
-            </div>
-            <p>&copy; 2026 Roy Rhayem. All rights reserved.</p>
-        </div>
+        <a href="./support.html">FAQ</a>
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="mailto:support@flyid.app">Contact</a>
+        <span>&copy; 2026 Roy Rhayem</span>
     </footer>
 
-    <script src="./main.js"></script>
 </body>
-
 </html>

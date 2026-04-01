@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlyID Mobile UI Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./prototype.css">
+</head>
+
+<body>
+    <main class="prototype-shell">
+        <header class="prototype-header">
+            <div>
+                <p class="eyebrow">FlyID iOS Prototype</p>
+                <h1>Mobile app screens ready for review</h1>
+                <p class="intro">Minimal iOS-style UI with clear spacing, strong hierarchy, and six separately named screens for capture.</p>
+            </div>
+            <nav class="screen-jump" aria-label="Jump to screen">
+                <a href="#onboarding-1">Onboarding 1</a>
+                <a href="#onboarding-2">Onboarding 2</a>
+                <a href="#onboarding-3">Onboarding 3</a>
+                <a href="#passport-scan">Passport Scan</a>
+                <a href="#expiry-alert">Expiry Alert</a>
+                <a href="#document-list">Document List</a>
+            </nav>
+        </header>
+
+        <section class="screen-grid">
+            <article class="screen-block" id="onboarding-1">
+                <div class="screen-label">Onboarding 1</div>
+                <div class="iphone">
+                    <div class="device-frame">
+                        <div class="dynamic-island"></div>
+                        <section class="screen screen-onboarding screen-onboarding-a">
+                            <div class="status-row"><span>9:41</span><span>LTE</span></div>
+                            <div class="screen-content">
+                                <div class="hero-icon">ID</div>
+                                <h2>Your passport.<br>Digitized instantly.</h2>
+                                <p>Scan the printed code on your passport in seconds and keep every detail organized locally on your iPhone.</p>
+                                <div class="feature-pill-row">
+                                    <span>MRZ Scan</span>
+                                    <span>Offline First</span>
+                                </div>
+                            </div>
+                            <div class="bottom-area">
+                                <div class="progress-dots">
+                                    <span class="active"></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <button class="primary-btn">Continue</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </article>
+
+            <article class="screen-block" id="onboarding-2">
+                <div class="screen-label">Onboarding 2</div>
+                <div class="iphone">
+                    <div class="device-frame">
+                        <div class="dynamic-island"></div>
+                        <section class="screen screen-onboarding screen-onboarding-b">
+                            <div class="status-row"><span>9:41</span><span>LTE</span></div>
+                            <div class="screen-content">
+                                <div class="hero-card">
+                                    <div class="ring"></div>
+                                    <div class="scan-chip">NFC Ready</div>
+                                </div>
+                                <h2>Verify the secure chip with NFC</h2>
+                                <p>Hold your iPhone near the passport cover to read the real government-stored data and face photo.</p>
+                                <ul class="mini-list">
+                                    <li>Biometric face image</li>
+                                    <li>Authentic issuer data</li>
+                                    <li>Cryptographic verification</li>
+                                </ul>
+                            </div>
+                            <div class="bottom-area">
+                                <div class="progress-dots">
+                                    <span></span>
+                                    <span class="active"></span>
+                                    <span></span>
+                                </div>
+                                <button class="primary-btn">Continue</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </article>
+
+            <article class="screen-block" id="onboarding-3">
+                <div class="screen-label">Onboarding 3</div>
+                <div class="iphone">
+                    <div class="device-frame">
+                        <div class="dynamic-island"></div>
+                        <section class="screen screen-onboarding screen-onboarding-c">
+                            <div class="status-row"><span>9:41</span><span>LTE</span></div>
+                            <div class="screen-content">
+                                <div class="shield-stack">
+                                    <div class="shield-card large">Face ID</div>
+                                    <div class="shield-card">Encrypted</div>
+                                    <div class="shield-card">No Cloud</div>
+                                </div>
+                                <h2>Stay ahead of every expiry date</h2>
+                                <p>Get timely alerts, keep family documents together, and unlock the app only with your biometrics.</p>
+                            </div>
+                            <div class="bottom-area">
+                                <div class="progress-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span class="active"></span>
+                                </div>
+                                <button class="primary-btn">Get Started</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </article>
+
+            <article class="screen-block" id="passport-scan">
+                <div class="screen-label">Passport Scan</div>
+                <div class="iphone">
+                    <div class="device-frame">
+                        <div class="dynamic-island"></div>
+                        <section class="screen screen-scan">
+                            <div class="status-row inverse"><span>9:41</span><span>LTE</span></div>
+                            <div class="screen-top">
+                                <span class="ghost-btn">Cancel</span>
+                                <h2>Scan Passport</h2>
+                                <span class="ghost-btn">Help</span>
+                            </div>
+                            <div class="camera-view">
+                                <div class="passport-outline">
+                                    <div class="scanner-line"></div>
+                                </div>
+                            </div>
+                            <div class="scan-sheet">
+                                <p class="sheet-title">Place the passport data page inside the frame</p>
+                                <p class="sheet-copy">FlyID will scan the MRZ code locally. No image leaves your device.</p>
+                                <div class="sheet-data">
+                                    <div><span>Document</span><strong>Passport</strong></div>
+                                    <div><span>Mode</span><strong>Auto Detect</strong></div>
+                                </div>
+                                <button class="primary-btn">Capture</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </article>
+
+            <article class="screen-block" id="expiry-alert">
+                <div class="screen-label">Expiry Alert</div>
+                <div class="iphone">
+                    <div class="device-frame">
+                        <div class="dynamic-island"></div>
+                        <section class="screen screen-alerts">
+                            <div class="status-row"><span>9:41</span><span>LTE</span></div>
+                            <div class="screen-top compact">
+                                <div>
+                                    <p class="section-kicker">Alerts</p>
+                                    <h2>Renew soon</h2>
+                                </div>
+                                <span class="badge-chip warning">2 urgent</span>
+                            </div>
+                            <div class="alert-stack">
+                                <article class="alert-card critical">
+                                    <div class="alert-header">
+                                        <span>French Visa</span>
+                                        <strong>14 days left</strong>
+                                    </div>
+                                    <p>Set a reminder this week to avoid travel disruption.</p>
+                                    <button class="secondary-btn">Create Reminder</button>
+                                </article>
+                                <article class="alert-card">
+                                    <div class="alert-header">
+                                        <span>Lebanese Passport</span>
+                                        <strong>6 months left</strong>
+                                    </div>
+                                    <p>Recommended renewal window opens on June 12.</p>
+                                </article>
+                                <article class="alert-card">
+                                    <div class="alert-header">
+                                        <span>US Entry Permit</span>
+                                        <strong>Saved</strong>
+                                    </div>
+                                    <p>Auto check-ins enabled for 30 and 7 days before expiry.</p>
+                                </article>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </article>
+
+            <article class="screen-block" id="document-list">
+                <div class="screen-label">Document List</div>
+                <div class="iphone">
+                    <div class="device-frame">
+                        <div class="dynamic-island"></div>
+                        <section class="screen screen-documents">
+                            <div class="status-row"><span>9:41</span><span>LTE</span></div>
+                            <div class="screen-top compact">
+                                <div>
+                                    <p class="section-kicker">Vault</p>
+                                    <h2>My Documents</h2>
+                                </div>
+                                <button class="icon-btn" aria-label="Add document">+</button>
+                            </div>
+                            <div class="search-field">Search passports, visas, IDs</div>
+                            <div class="filter-row">
+                                <span class="filter-chip active">All</span>
+                                <span class="filter-chip">Active</span>
+                                <span class="filter-chip">Expiring</span>
+                            </div>
+                            <div class="doc-list">
+                                <article class="doc-item">
+                                    <div class="doc-avatar blue">LB</div>
+                                    <div class="doc-meta">
+                                        <strong>Lebanese Passport</strong>
+                                        <span>Expires Oct 12, 2030</span>
+                                    </div>
+                                    <span class="doc-status success">Verified</span>
+                                </article>
+                                <article class="doc-item">
+                                    <div class="doc-avatar dark">FR</div>
+                                    <div class="doc-meta">
+                                        <strong>French Visa</strong>
+                                        <span>Expires Apr 18, 2026</span>
+                                    </div>
+                                    <span class="doc-status warning">Urgent</span>
+                                </article>
+                                <article class="doc-item">
+                                    <div class="doc-avatar pale">AE</div>
+                                    <div class="doc-meta">
+                                        <strong>Emirates ID</strong>
+                                        <span>Expires Jan 03, 2028</span>
+                                    </div>
+                                    <span class="doc-status neutral">Saved</span>
+                                </article>
+                            </div>
+                            <div class="tab-bar">
+                                <span class="tab active">Documents</span>
+                                <span class="tab">Alerts</span>
+                                <span class="tab">Settings</span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script src="./prototype.js"></script>
+</body>
+
+</html>
