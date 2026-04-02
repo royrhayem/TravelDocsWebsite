@@ -238,86 +238,39 @@
     </header>
 
     <main class="content">
-
-        <div class="faq-group">
-            <p class="faq-group-title">Privacy &amp; Security</p>
-
-            <details>
-                <summary>
-                    Is my data safe if I lose my phone?
-                    <span class="summary-icon">+</span>
-                </summary>
-                <div class="faq-answer">
-                    <p>Yes. FlyID stores your data entirely on your device, protected by iOS encryption. Access to the app is locked behind Face ID, Touch ID, or your device passcode — without your biometrics or passcode, nobody can get in.</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>
-                    Does FlyID upload anything to a server?
-                    <span class="summary-icon">+</span>
-                </summary>
-                <div class="faq-answer">
-                    <p>No. FlyID is offline-first. Your documents, photos, and personal data never leave your device unless you explicitly use the Emergency Sharing feature — and even then the data is end-to-end encrypted and the link is time-limited.</p>
-                </div>
-            </details>
-        </div>
-
-        <div class="faq-group">
-            <p class="faq-group-title">Scanning</p>
-
-            <details>
-                <summary>
-                    Does FlyID scan my biometric photo?
-                    <span class="summary-icon">+</span>
-                </summary>
-                <div class="faq-answer">
-                    <p>Yes. When you scan the chip inside a modern e-Passport, FlyID extracts the high-resolution facial image stored on it and saves it locally. This data is never sent to our servers.</p>
-                </div>
-            </details>
-
-            <details>
-                <summary>
-                    Why is the chip scan failing on my passport?
-                    <span class="summary-icon">+</span>
-                </summary>
-                <div class="faq-answer">
-                    <p>Chip reading can be sensitive to positioning. A few things to try:</p>
-                    <ul>
-                        <li>Remove any thick case from your iPhone.</li>
-                        <li>Place the top edge of your iPhone near the bottom half of the passport's back cover, or open the passport to the data page and rest your phone on it.</li>
-                        <li>Hold your phone completely still for a few seconds when the prompt appears.</li>
-                    </ul>
-                </div>
-            </details>
-        </div>
-
-        <div class="faq-group">
-            <p class="faq-group-title">Subscription</p>
-
-            <details>
-                <summary>
-                    How do I manage or cancel FlyID Pro?
-                    <span class="summary-icon">+</span>
-                </summary>
-                <div class="faq-answer">
-                    <p>All billing is handled by Apple. To manage your subscription:</p>
-                    <ul>
-                        <li>Open <strong>Settings</strong> on your iPhone.</li>
-                        <li>Tap your name at the top, then tap <strong>Subscriptions</strong>.</li>
-                        <li>Select FlyID Pro and choose "Cancel Subscription".</li>
-                    </ul>
-                </div>
-            </details>
-        </div>
+        <div id="faq-container"></div>
 
         <div class="contact-card">
             <h2>Still need help?</h2>
             <p>Our support team usually replies within one business day.</p>
             <a href="mailto:support@flyid.app" class="contact-btn">Email Support</a>
         </div>
-
     </main>
+
+    <script>
+        fetch('./faqs.json')
+            .then(r => r.json())
+            .then(groups => {
+                const container = document.getElementById('faq-container');
+                container.innerHTML = groups.map(group => `
+                    <div class="faq-group">
+                        <p class="faq-group-title">${group.group}</p>
+                        ${group.items.map(item => `
+                            <details>
+                                <summary>
+                                    ${item.q}
+                                    <span class="summary-icon">+</span>
+                                </summary>
+                                <div class="faq-answer">
+                                    <p>${item.a}</p>
+                                    ${item.list ? `<ul>${item.list.map(li => `<li>${li}</li>`).join('')}</ul>` : ''}
+                                </div>
+                            </details>
+                        `).join('')}
+                    </div>
+                `).join('');
+            });
+    </script>
 
     <footer>
         <a href="./support.html">FAQ</a>
