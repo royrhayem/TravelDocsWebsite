@@ -32,7 +32,7 @@
 FlyID operates on a strictly enforced freemium model.
 
 **Free Tier Limits:**
-- Maximum of 3 saved documents.
+- Maximum of 2 saved documents.
 - 1 Profile only.
 - Cannot persist NFC data (NFC reading is preview-only; Face Images are not saved).
 - No Emergency Sharing or Verified Card functionalities.
